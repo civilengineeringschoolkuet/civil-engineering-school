@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome, <span id="user-name">User</span>!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="logout.html" class="logout-btn">Logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard -->
+    <section class="dashboard">
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-left">
+                <h3>Your Profile Picture</h3>
+                <input type="file" id="upload" accept="image/*" onchange="previewImage(event)">
+                <br><br>
+                <img id="preview" width="150" height="150" alt="Profile Preview" />
+
+            </div>
+            <div class="profile-right">
+                <h3>Name: <span id="user-name-display"></span></h3>
+                <p>Contact Number: <span id="user-contact"></span></p>
+                <p>Email: <span id="user-email"></span></p>
+                <p>Educational Institute: <span id="user-institute"></span></p>
+                <button onclick="editProfile()">Edit Profile</button>
+            </div>
+        </div>
+
+        <!-- Edit Profile Form -->
+        <div id="edit-profile-form" style="display: none;">
+            <h3>Edit Your Profile</h3>
+            <input type="text" id="edit-name" placeholder="Enter Name">
+            <input type="text" id="edit-contact" placeholder="Enter Contact Number">
+            <input type="email" id="edit-email" placeholder="Enter Email">
+            <input type="text" id="edit-institute" placeholder="Enter Educational Institute">
+            <button onclick="saveProfile()">Save</button>
+        </div>
+
+        <!-- Payment History -->
+        <div class="payment-history">
+            <h3>Payment History</h3>
+            <ul id="payments-list"></ul>
+        </div>
+    </section>
+
+    <script src="dashboard.js"></script>
+
+<footer>
+        <p>&copy; 2025 Civil Engineering School. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
